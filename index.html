@@ -8,12 +8,12 @@
     <meta name="robots" content="한솔제지, 종이, 제지, hansol, paper">
     <meta name="description" content="대한민국의 제지산업을 이끌어가는 글로벌 리더">
     <meta property="og:title" content="한솔제지">
-    <meta property="og:url" content="https://10dy10.github.io/hansol/">
+    <meta property="og:url" content="https://pam7464.github.io/hansol/">
     <meta property="og:image" content="./images/og-image.jpg">
     <meta property="og:description" content="대한민국의 제지산업을 이끌어가는 글로벌 리더">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="한솔제지">
-    <meta name="twitter:url" content="https://10dy10.github.io/hansol/">
+    <meta name="twitter:url" content="https://pam7464.github.io/hansol/">
     <meta name="twitter:image" content="./images/og-image.jpg">
     <meta name="twitter:description" content="대한민국의 제지산업을 이끌어가는 글로벌 리더">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
@@ -23,7 +23,7 @@
     <script src="./js/jquery.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
     <title>한솔제지</title>
-    
+
     <style>
         @font-face {
             font-family:NotoSansKorean;
@@ -34,23 +34,51 @@
             font-weight:300;
             font-size:14px;
         }
-        
-        .wrap{overflow:hidden;}
-        .container{max-width:1920px;margin:0 auto;}
+        .scnone{
+            width:0;
+            height:0;
+            overflow:hidden;
+        }
 
-        /* skip-menu style */
-        .skip-menu a{padding:1em 2em;background-color:#017ec6;font-weight:900;font-size:4em;color:white;position:fixed;left:50%;top:-50%;z-index:99999;transform:translate(-50%,-50%);}
-        .skip-menu a:focus{outline:none;top:50%;}
+        .skip-menu a{
+            padding:1em 2em;
+            background-color:#017ec6;
+            font-weight:900;
+            font-size:4em;
+            color:white;
+            position:fixed;
+            left:50%;
+            top:-100%;
+            z-index:99999;
+            transform:translate(-50%,-50%);
+        }
+        .skip-menu a:focus{
+            outline:none;
+            top:50%;
+        }
 
-        
-        /* header style */
-        .header{position:fixed;left:0;right:0;top:0;z-index:999998;background-color:#fff;}
+        .wrap{
+            overflow:hidden;
+        }
+        .container{
+            max-width:1920px;
+            margin:0 auto;                       
+        }
+
+        .header{
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            z-index:99998;
+            background-color:#fff;
+        }
         .header .container{
             max-width:1200px;
             padding:0 20px 8px;
             display:flex;
             justify-content:space-between;
-            align-items:center;
+            align-items:center;            
         }
         .main-tit,.footer-tit{
             display:flex;
@@ -63,36 +91,53 @@
             font-size:28px;
             position:relative;
         }
-        .main-tit a{color:#333;}
-        .tit-eng::before,.tit-eng::after{content:'';display:block;width:7px;height:7px;
-        background-color:#017ec6;position:absolute;left:0;top:11px;}
-        .tit-eng::after{background-color:#00a650;top:auto;bottom:8px;}
+        .tit-eng::before,.tit-eng::after{
+            content:'';
+            display:block;
+            width:7px;
+            height:7px;
+            background-color:#017ec6;
+            position:absolute;
+            left:0;
+            top:11px;            
+        }
+        .tit-eng::after{            
+            background-color:#00a650;
+            top:auto;
+            bottom:8px;            
+        }
+        
         .header .nav{
             padding:20px;
             background-color:#017ec6;
             position:fixed;
             left:0;
-            top:68px;
             right:0;
+            top:68px;
             bottom:0;
             z-index:99998;
-            transform:translate(100%,0);
+            transform:translate(100%,0);            
             transition:0.3s;
         }
         .header .nav.active{
             transform:translate(0,0);
         }
+        
         .main-nav>li{
             padding:5px 0;
-            font-size:20px;
+            font-size:20px;            
         }
-        .main-nav>li.active>a::after{transform:rotate(90deg);}
-        .main-nav>li:first-child{padding-top:0;}
-        .main-nav>li:last-child{padding-bottom:0;}
-        .main-nav>li:hover>a{
-            color:#00a650;
+        .main-nav>li:first-child{
+            padding-top:0;
         }
-        .main-nav>li>a{display:flex;justify-content:space-between;align-items:center;}
+        .main-nav>li:last-child{
+            padding-bottom:0;
+        }
+        .main-nav>li>a{
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+        }
         .main-nav>li>a::after{
             content:'';
             display:block;
@@ -102,13 +147,23 @@
             border-left-color:#fff;
             transition:0.3s;
         }
+        .main-nav>li.active>a::after{
+            transform:rotate(90deg);
+        }
+        .main-nav>li:hover>a{
+            color:#00a650;
+        }
+        .main-nav a{
+            color:#fff;
+        }
         .main-nav ul{
             padding-left:1em;
             font-size:0.8em;
             display:none;
         }
-        .main-nav ul>li:hover>a{color:#00a650;}
-        .main-nav a{color:#fff;}
+        .main-nav ul>li:hover>a{
+            color:#00a650;
+        }
         .sub-nav{
             position:absolute;
             left:20px;
@@ -116,29 +171,346 @@
             bottom:20px;
             display:flex;
             justify-content:flex-start;
-            align-items:flex-end;
+            align-items:flex-end;            
         }
-        .sub-nav li{margin-right:20px;padding:0.5em 1em;}
-        .sub-nav li a{color:#fff;}
-        .sub-nav li:nth-child(2){border-radius:20px;background-color:#fff;display:flex;}
-        .sub-nav li:nth-child(2)::before{content:'';display:block;width:20px;height:20px;margin-right:0.5em;background:url(./images/img-main01.jpg) no-repeat center center;background-size:cover;}
-        .sub-nav li:nth-child(2) a{color:#017ec6;}
-        .sub-nav li:last-child{width:40px;height:40px;border-radius:20px;background-color:#00a650;display:flex;justify-content:center;align-items:center;}
-        .btn-nav{height:34px;padding-top:4px;display:flex;flex-flow:column wrap;justify-content:space-between;cursor:pointer;
+        .sub-nav li{
+            margin-right:20px;
+            padding:0.5em 1em;
+        }        
+        .sub-nav li:nth-child(2){
+            border-radius:20px;
+            background-color:#00a650;
+            display:flex;
+        }
+        .sub-nav li:nth-child(2)::before{
+            content:'';
+            display:block;
+            width:20px;
+            height:20px;
+            margin-right:0.5em;
+            background:url(./images/img-main01.jpg) no-repeat center center;
+            background-size:cover;
+        }
+
+        .sub-nav li:last-child{
+            width:40px;
+            height:40px;
+            border-radius:20px;
+            background-color:#00a650;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .sub-nav a{
+            color:#fff;
+        }
+        .btn-nav{
+            height:34px;
+            padding-top:4px;
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content:space-between;
+            cursor:pointer;
         }
         .btn-nav .btn-line{
             width:30px;
             height:3px;
-            background-color:black;
+            background-color:#000;
             text-indent:-999999px;
             border-radius:1.5px;
             transition:0.3s;
         }
-        .btn-nav.rotate .btn-line:nth-child(1){transform:rotate(50deg);transform-origin:left top;width:36px;}
-        .btn-nav.rotate .btn-line:nth-child(2){width:0;opacity:0;}
-        .btn-nav.rotate .btn-line:nth-child(3){transform:rotate(-50deg);transform-origin:left bottom;width:36px;}
-        
-    </style>
+        .btn-nav.rotate .btn-line:nth-child(1){
+            transform:rotate(50deg);
+            transform-origin:left top;
+            width:36px;
+        }
+        .btn-nav.rotate .btn-line:nth-child(2){
+            width:0;
+            opacity:0;
+        }
+        .btn-nav.rotate .btn-line:nth-child(3){
+            transform:rotate(-50deg);
+            transform-origin:left bottom;
+            width:36px;
+        }
+
+        /* main-banner style */
+        .main-banner{
+            padding-top:69px;
+        }
+        .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+            bottom:30px;
+            left:10%;
+            right:10%;
+            width:auto;
+        }
+        .swiper-pagination .swiper-pagination-bullet{
+            width:20%;
+            height:1px;
+            margin:0 !important;
+            border-radius:0;
+            background-color:#fff;
+            opacity:1;
+        }
+        .swiper-pagination-bullet.swiper-pagination-bullet-active{
+            height:3px;
+            background-color:#017ec6;
+        }
+        .swiper-slide-name{
+            position:absolute;
+            left:10%;
+            right:10%;
+            bottom:12px;
+            display:flex;
+            z-index:99997;
+            font-size:12px;
+        }
+        .swiper-slide-name span{
+            flex:1;
+            text-align:center;
+            cursor:pointer;
+            color:#fff;
+            font-weight:500;
+        }
+        .swiper-slide-name span.active{
+            color:#017ec6;
+        }
+        .link-slide{
+            padding-right:30px;
+            color:#666;
+            position:absolute;
+            left:16%;
+            top:50%;
+            z-index:99996;
+            font-size:10px;
+        }
+        .link-slide::before,.link-slide::after{
+            content:'';
+            display:block;
+            width:16px;
+            height:16px;
+            transform:translate(0,-50%) rotate(45deg);
+            background-color:#666;
+            position:absolute;
+            right:5px;
+            top:50%;
+        }
+        .link-slide::before{
+            border-radius:50%;
+            right:0;
+            cursor:pointer;
+        }
+        .link-slide::after{
+            width:8px;
+            height:8px;
+            border-top:2px solid #fff;
+            border-right:2px solid #fff;
+            background-color:transparent;
+        }
+        .swiper-button-prev,.swiper-button-next{
+            display:none;
+        }
+
+        /* sub-banner style */
+        .swiper02{
+            padding-top:200px;
+            padding-bottom:200px;
+        }
+        .swiper02 .img-box{
+            /* height:500px; */
+        }
+        .swiper02 img{
+            width:auto;
+            height:80vw;
+            display:block;
+            margin:0 auto;
+        }
+        .swiper02 .swiper-pagination{
+            bottom:12px !important;
+        }
+        .swiper02 .swiper-pagination .swiper-pagination-bullet{
+            width:6px;
+            height:6px;
+            margin:0 3px !important;
+            border-radius:50%;
+        }
+        .sub-banner-txt{
+            display:flex;
+            align-items:center;
+        }
+        .sub-banner-txt .sub-banner-slide-top{
+            font-weight:900;
+            font-size:46px;
+            position:absolute;
+            left:20px;
+            right:20px;
+            top:-34px;
+            z-index:99996;
+        }
+        .sub-banner-txt::after{
+            content:'';
+            display:none;
+            height:2px;
+            background-color:#000;
+        }
+        .sub-banner-txt p{
+            position:absolute;
+            left:20px;
+            right:20px;
+            top:80vw;
+            z-index:99996;
+        }
+        .sub-banner-txt p::before{
+            content:'한솔제지 소개';
+            display:block;
+            width:130px;
+            margin-bottom:20px;
+            padding:10px;
+            background-color:#000;
+            color:#fff;
+            text-align:center;
+        }
+        .sub-banner-txt p::after{
+            content:'초대 문화부 장관 이어령, 한솔 40년 사사 축사 중';
+            display:block;
+            padding-top:14px;
+            font-size:12px;
+            color:#999;
+        }
+
+        @media(min-width:540px){
+            .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+            bottom:40px;
+            }
+            .swiper-slide-name{
+                bottom:12px;
+            }
+            .link-slide{
+                font-size:12px;
+            }
+            .link-slide::before{
+                width:18px;
+                height:18px;
+            }
+            .link-slide::after{
+                width:9px;
+                height:9px;
+            }
+            .swiper02 .swiper-pagination{
+                bottom:20px !important;
+            }
+            .swiper02 .swiper-pagination .swiper-pagination-bullet{
+                width:10px;
+                height:10px;
+                margin:0 5px !important;
+                border-radius:50%;
+        }
+        }
+
+
+        @media(min-width:960px){
+            .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+            bottom:60px;
+            }
+            .swiper-slide-name{
+                bottom:40px;
+                font-size:14px;
+            }
+            .link-slide{
+                font-size:14px;
+            }
+            .link-slide::before{
+                width:22px;
+                height:22px;
+            }
+            .link-slide::after{
+                width:11px;
+                height:11px;
+            }
+        }
+
+
+
+
+        @media(min-width:1200px){
+
+            /* header style */
+            .header{
+                position:static;
+            }
+            .header .container{
+                padding:14px 0;
+            }
+            .header .nav{
+                padding:0;
+                background-color:transparent;
+                display:flex;
+                justify-content:space-between;
+                align-items:flex-end;
+                position:static;
+                transform:translate(0,0);
+                transition:none;
+            }
+            .main-nav li{
+                padding:0 0.5em;
+                display:inline-block;
+            }
+            .main-nav>li>a{
+                display:inline;
+            }
+            .main-nav a{
+                color:#333;
+            }
+            .main-nav>li>a::after{display:none;}
+            .sub-nav{
+                position:static;
+                justify-content:flex-end;
+            }
+            .sub-nav li{
+                margin-right:0;
+                margin-left:1em;
+            }
+            .sub-nav li:first-child{
+                line-height:10px;
+            }
+            .sub-nav li:first-child a{color:#999;}
+            .btn-nav{display:none;}
+
+            /* main-banner style */
+            .main-banner{
+            padding-top:0;}
+            .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+            bottom:80px;
+            }
+            .swiper-slide-name{
+                bottom:60px;
+            }
+            .link-slide{
+                font-size:18px;
+            }
+            .link-slide::before{
+                width:26px;
+                height:26px;
+            }
+            .link-slide::after{
+                width:13px;
+                height:13px;
+            }
+            .swiper-button-prev,.swiper-button-next{
+                display:block;
+            }
+            .swiper02 .swiper-pagination{
+            bottom:28px !important;
+            }
+            .swiper02 .swiper-pagination .swiper-pagination-bullet{
+                width:14px;
+                height:14px;
+                margin:0 7px !important;
+                border-radius:50%;
+            }
+        }
+    </style>    
 </head>
 <body>
     <div class="skip-menu">
@@ -178,7 +550,7 @@
                                 <li><a href="#">연혁</a></li>
                                 <li><a href="#">CEO인사</a></li>
                                 <li><a href="#">문화사업</a></li>
-                                <li><a href="#">사업장소개</a></li>
+                                <li><a href="#">사업장 소개</a></li>
                             </ul>
                         </li>
                         <li>
@@ -204,18 +576,18 @@
                             <ul>
                                 <li><a href="#">인재상</a></li>
                                 <li><a href="#">인사제도</a></li>
-                                <li><a href="#">채용정보</a></li>
+                                <li><a href="#">채용정보</a></li>                                
                             </ul>
                         </li>
                         <li>
                             <a href="#">소식</a>
                             <ul>
                                 <li><a href="#">공지사항</a></li>
-                                <li><a href="#">뉴스</a></li>
+                                <li><a href="#">뉴스</a></li>                                
                             </ul>
                         </li>
-                    </ul>
-                    
+                    </ul>                
+                
                     <ul class="sub-nav">
                         <li><a href="#">고객문의</a></li>
                         <li><a href="#">가상전시관</a></li>
@@ -231,23 +603,23 @@
         </header>
         <section class="section main-banner">
             <div class="container">
-                <h2>메인 배너</h2>
-                <div class="swiper">
+                <h2 class="scnone">메인 배너</h2>
+                <div class="swiper swiper01">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/img-main01.jpg" alt="인스퍼">
                             </div>
                             <div class="link-slide">
-                                자세히 보기
-                            </div>
+                                자세히
+                            </div>                            
                         </div>
                         <div class="swiper-slide">
                             <div class="img-box">
                                 <img src="./images/img-main02.jpg" alt="인쇄용지">
                             </div>
                             <div class="link-slide">
-                                자세히 보기
+                                자세히
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -255,7 +627,7 @@
                                 <img src="./images/img-main03.jpg" alt="산업용지">
                             </div>
                             <div class="link-slide">
-                                자세히 보기
+                                자세히
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -263,7 +635,7 @@
                                 <img src="./images/img-main04.jpg" alt="특수지">
                             </div>
                             <div class="link-slide">
-                                자세히 보기
+                                자세히
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -271,27 +643,29 @@
                                 <img src="./images/img-main05.jpg" alt="감열지">
                             </div>
                             <div class="link-slide">
-                                자세히 보기
+                                자세히
                             </div>
                         </div>
                     </div>
+
                     <div class="swiper-pagination"></div>
                     <div class="swiper-slide-name">
                         <span>인스퍼</span>
                         <span>인쇄용지</span>
                         <span>산업용지</span>
-                        <span>특수지</span>
+                        <span>특수용지</span>
                         <span>감열지</span>
                     </div>
+
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
             </div>
         </section>
-        <div class="section section sub-banner">
+        <section class="section sub-banner">
             <div class="container">
-                <h2>서브 배너</h2>
-                <div class="swiper">
+                <h2 class="scnone">서브 배너</h2>
+                <div class="swiper swiper02">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="sub-banner-txt">
@@ -300,22 +674,10 @@
                                     <br>
                                     철갑을 두른 듯하다는 그 소나무처럼 강철 같은 힘을 발휘한다.
                                     <br>
-                                    침엽수의 날카로운 잎처럼 예리하고 섬세한 적응력으로 응전을 한다.
+                                    침엽수의 날카로운 잎처럼 예리하고 설세한 적응력으로 응전을 한다.
                                 </p>
                             </div>
-                            <div class="img-box"><img src="./images/img-sub01.jpg" alt=""></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="sub-banner-txt">
-                                <p>
-                                    한솔은 영원한 청년으로
-                                    <br>
-                                    40년의 나이테를 안에 몰래 숨기며
-                                    <br>
-                                    천년을 만년을 향하여 젊게 살아가는 바위 같은 나무다.
-                                </p>
-                            </div>
-                            <div class="img-box"><img src="./images/img-sub02.jpg" alt=""></div>
+                            <div class="img-box"><img src="./images/img-sub01.jpg" alt="축사이미지1"></div>
                         </div>
                         <div class="swiper-slide">
                             <div class="sub-banner-txt">
@@ -327,18 +689,28 @@
                                     문방사우의 하나인 이 종이야말로 시와 서화를 담는 꿈의 그릇이 아니겠는가.
                                 </p>
                             </div>
-                            <div class="img-box"><img src="./images/img-sub03.jpg" alt=""></div>
+                            <div class="img-box"><img src="./images/img-sub02.jpg" alt="축사이미지2"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="sub-banner-txt">
+                                <p>
+                                    한솔은 영원한 청년으로
+                                    <br>
+                                    40년의 나이테를 안에 몰래 숨기며
+                                    <br>
+                                    천년을 만년을 향하여 젊게 살아가는 바위 같은 나무다.
+                                </p>
+                            </div>
+                            <div class="img-box"><img src="./images/img-sub03.jpg" alt="축사이미지3"></div>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
             </div>
-        </div>
-        <section class="section together">
+        </section>
+        <section class="section togethor">
             <div class="container">
-                <h2>Go together</h2>
+                <h2>Go togethor</h2>
                 <p>한솔제지는 고객과 함께 성장합니다.</p>
                 <hr>
                 <h3>
@@ -350,18 +722,20 @@
                         <br>
                         선진 제지기업으로서 최고의 제품을 위해 노력하고 있습니다.
                     </a>
-                </p>
+                </p>                
                 <hr>
                 <h3>
-                    <a href="#">열린구매 시스템</a>
+                    <a href="#">
+                        열린구매 시스템
+                    </a>
                 </h3>
                 <p>
                     <a href="#">
-                        구매관리, 운송정보, 납품실적관리를 쉽고 편리하게
+                        구매관리, 운송정보, 납품실적관리를 쉽고 평리하게
                         <br>
                         확인 하실 수 있습니다.
                     </a>
-                </p>
+                </p>                
             </div>
         </section>
         <footer class="footer">
@@ -382,28 +756,31 @@
                             <li>한솔그룹</li>
                             <li>한솔PNS</li>
                             <li>한솔홈데코</li>
-                            <li>한솔테크닉스</li>
-                            <li>한솔케미칼</li>
+                            <li>한솔테그닉스</li>
+                            <li>한솔케미컬</li>
                             <li>한솔EME</li>
                             <li>한솔로지스틱스</li>
                             <li>한솔인티큐브</li>
-                            <li>한솔 Museum SAN</li>
+                            <li>한솔Meseum SAN</li>
                             <li>한솔페이퍼텍</li>
                         </ul>
                         <div class="insta">
                             <div>인스타</div>
                         </div>
                         <div class="face">
-                            <div>페이스북</div>
+                            <div>패이스북</div>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
     </section>
-
+    
     <script>
         $(function(){
+            let idxNum = 0;
+            $('.swiper-slide-name span').eq(idxNum).addClass('active');
+            
             $('#btn-nav').on({
                 'click':function(){
                     $(this).toggleClass('rotate');
@@ -419,10 +796,50 @@
                     $('.main-nav>li').not(this).removeClass('active');
                 }
             });
-
-            
-        })
         
+
+            const swiper = new Swiper('.swiper01',{
+                loop:true,
+                autoplay:{
+                    delay: 3000,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                },
+                on:{
+                    slideChange:function(){
+                        // idxNum = this.activeIndex;
+                        for(let cnt=0;cnt<5;cnt++){
+                            if($('.swiper-pagination-bullet').eq(cnt).hasClass('swiper-pagination-bullet-active')){
+                                idxNum = $('.swiper-pagination-bullet').eq(cnt).index();
+                            }
+                        }
+
+                        // $('.swiper-pagination-bullet').hasClass('swiper-pagination-bullet-active');
+                        $('.swiper-slide-name span').removeClass('active');
+                        $('.swiper-slide-name span').eq(idxNum).addClass('active');
+                    }
+                }
+            })
+
+            const swiper2 = new Swiper('.swiper02',{
+                loop:true,
+                autoplay:{
+                    delay:3500,
+                },
+                pagination:{
+                    el:'.swiper-pagination',
+                    type: 'bullets',
+                }
+            });
+
+            $('.sub-banner-txt').prepend('<div class="sub-banner-slide-top">한솔제지는<br>국내 제지산업의<br>중심입니다.</div>')
+        })
     </script>
 </body>
 </html>
