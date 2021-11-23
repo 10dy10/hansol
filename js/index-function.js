@@ -75,4 +75,16 @@ $(function(){
         }
     });
 
+    $(window).scroll(function(){
+        let scroll = $(window).scrollTop();
+
+        // 네비 css
+        if(scroll>1){$('.header').css({
+            'background-color':'#fff',
+        })}else{$('.header').css({
+            'background-color':'transparent',
+        })};
+
+    })
+
 })
