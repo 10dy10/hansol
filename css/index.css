@@ -282,6 +282,7 @@
         }
         .swiper-button-next, .swiper-button-prev{color:#00a650;}
         .link-slide{
+            display:none;
             padding-right:30px;
             color:#666;
             position:absolute;
@@ -589,6 +590,9 @@
                 display:block;
             }
 
+        }
+        @media (min-width:768px) {
+            .link-slide{display:block;}
         }
 
         @media(min-width:840px){
