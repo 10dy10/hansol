@@ -43,25 +43,26 @@
             justify-content:space-between;
             background-color:#fff;
         }
-        .pop-up form,.pop-up button{
+        .pop-up form{
             margin:10px;
         }
         .pop-up button{
+            margin:10px 20px 10px 0;
             text-indent:-999999px;
             cursor:pointer;
+            position:relative;
         }
-        .pop-up button::before,.pop-up button::after{
-            content:'';
-            display:block;
-            width:16px;
-            height:2px;
-            border-radius:1px;
-            background-color:#000;
+        .pop-up button p{
+            position:absolute;
+            width:14px;
+            height: 2px;;
             transform:rotate(45deg);
+            background-color:#000;
         }
-        .pop-up button::before{
+        .pop-up button p:last-child{
             transform:rotate(-45deg);
         }
+        
 
         .wrap{
             overflow:hidden;
@@ -110,7 +111,7 @@
         .tit-eng::after{            
             background-color:#00a650;
             top:auto;
-            bottom:8px;            
+            bottom:8px;
         }
         
         .header .nav{
@@ -562,8 +563,8 @@
             .swiper02 .swiper-pagination .swiper-pagination-bullet{
                 width:10px;
                 height:10px;
-                margin:0 5px !important;                
-            }            
+                margin:0 5px !important;
+            }
         }
 
         @media(min-width:640px){
@@ -718,12 +719,14 @@
                 text-align:center;
                 margin-top:-2px;
             }
+            .footer .select-box{margin:0 0 20px;}
         }
 
         @media(min-width:960px){
             .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
-                bottom:60px;                            
+                bottom:60px;
             }
+            .swiper02 .swiper-pagination .swiper-pagination-bullet{transform:scale(0.7);}
             .swiper-slide-name{
                 bottom:40px;
                 font-size:14px;
